@@ -4,10 +4,3 @@
 
  chmod +x run.sh
  ./run.sh
-Чтобы конвертировать и открыть task_0.ipynb в .html, нужно выполнить следующие команды
-(работает в случае, если у Вас браузер google chrome и операционная система linux):
-
-То же самое, только с открытием файла в браузере (Google Chrome):
-chmod +x run.sh
-./run.sh
-google-chrome task_0.html 
