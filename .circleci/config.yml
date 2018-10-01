@@ -20,28 +20,15 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run:
-          name: install dependencies
+      - run:chmod +x run.sh
+      - run: ./run.sh
+       - run:
+          name: for artifacts
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install --upgrade pip
-            pip install -r requirements.txt
-
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+            mkdir -p results
+            mv task_0.html results
     
-
       - store_artifacts:
-          path: test-reports
-          destination: test-reports
+          path: results/
+          destination: results/
           
