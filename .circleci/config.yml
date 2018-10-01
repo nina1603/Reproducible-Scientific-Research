@@ -41,8 +41,6 @@ jobs:
      
       # https://pytest.org
       # https://nose.readthedocs.io
-      - run: chmod +x run.sh
-      - run: ./run.sh
       - run:
           name: for artifacts
           command: |
