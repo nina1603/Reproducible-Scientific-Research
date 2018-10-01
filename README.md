@@ -9,3 +9,5 @@ cd VNI
 chmod +x run.sh
 
 ./run.sh
+
+[![CircleCI](https://circleci.com/gh/nina1603/VNI.svg?style=svg)](https://circleci.com/gh/nina1603/VNI)
