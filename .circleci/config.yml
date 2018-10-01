@@ -46,8 +46,10 @@ jobs:
       - run:
           name: for artifacts
           command: |
+            . venv/bin/activate
             mkdir -p reports
-            mv task_0.html reports
+            jupyter nbconvert --execute task_0.ipynb
+            mv task_0.html reports/task.html
 
       - store_artifacts:
           path: reports
