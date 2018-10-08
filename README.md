@@ -9,5 +9,5 @@ Using requirements.txt
 
 
 Using Dockerfile
-/smth will be here
+
 
