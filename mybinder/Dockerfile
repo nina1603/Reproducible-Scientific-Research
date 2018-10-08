@@ -1,7 +1,6 @@
 FROM circleci/python:3.6.1
 MAINTAINER nina.antonova@phystech.edu
 
-ENTRYPOINT [ “/bin/bash”, “-c” ]
 WORKDIR /tmp
 ADD * /tmp/
 
