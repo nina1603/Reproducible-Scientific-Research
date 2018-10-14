@@ -1,6 +1,5 @@
 FROM python:3.6.1
 
-ENTRYPOINT [ “/bin/bash”, “-c” ]
 WORKDIR /tmp
 ADD * /tmp/
 
