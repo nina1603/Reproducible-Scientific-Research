@@ -42,8 +42,9 @@ jobs:
           name: downloading and commiting kernel
           command: |
             . venv/bin/activate
-            mkdir .forkaggle
-            cd .forkaggle
+            mkdir .kaggle
+            cd .kaggle
+            echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             cd ..
             pip install kaggle-cli
             kg download -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -f test.csv
