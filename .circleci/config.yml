@@ -51,8 +51,8 @@ jobs:
             echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             cd ..
             kaggle competitions download titanic
-            jupyter-nbconvert --execute titanic_ml.ipynb
-            kaggle competitions submit titanic -f submission.csv -m "My submission"
+            jupyter-nbconvert --execute kernel.ipynb
+            kaggle competitions submit titanic -f submission.csv -m "submission"
             mkdir reports
             mv kernel.html reports/
 
