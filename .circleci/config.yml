@@ -50,7 +50,6 @@ jobs:
             . venv/bin/activate
             mkdir .forkaggle
             cd .forkaggle
-            echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             cd ..
             kg download -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -f test.csv
             kg download -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -f train.csv
