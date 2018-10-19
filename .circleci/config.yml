@@ -34,7 +34,7 @@ jobs:
         #mkdir .kaggle
             #cd .kaggle
             #echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
-            #cd --
+            #cd ..
             # kaggle competitions download titanic
             #jupyter-nbconvert --execute kernel.ipynb
             #kaggle competitions submit titanic -f submission.csv
@@ -48,11 +48,13 @@ jobs:
           name: downloading and commiting kernel
           command: |
             . venv/bin/activate
-            pip install kaggle-cli 
-            kg download -u ${KAGGLE_NAME} -p ${KAGGLE_PASSWORD} -c titanic -f test.csv 
-            kg download -u ${KAGGLE_NAME} -p ${KAGGLE_PASSWORD} -c titanic -f train.csv
-            jupyter-nbconvert --execute kernel.ipynb 
-            kg submit submission.csv -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -m "My submission of Titanic"
+            mkdir .kaggle
+            cd .kaggle
+            echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
+            cd ..
+            kaggle competitions download titanic
+            jupyter-nbconvert --execute kernel.ipynb
+            kaggle competitions submit titanic -f submission.csv
             mkdir reports
             mv kernel.html reports/
 
