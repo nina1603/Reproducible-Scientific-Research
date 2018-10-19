@@ -53,7 +53,7 @@ jobs:
             kg download -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -f test.csv 
             kg download -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -f train.csv
             jupyter-nbconvert --execute kernel.ipynb
-            kg submit submission.csv  -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -m "My submission of Titanic"
+            kg submit submission.csv -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -m "My submission of Titanic"
             mkdir reports
             mv kernel.html reports/
 
