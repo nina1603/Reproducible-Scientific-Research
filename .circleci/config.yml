@@ -52,7 +52,7 @@ jobs:
             cd .forkaggle
             echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             cd ..
-            kaggle competitions download titanic
+            kg download -c titanic
             jupyter-nbconvert --execute kernel.ipynb
             kaggle competitions submit titanic -f submission.csv -m "Submission"
             mkdir reports
