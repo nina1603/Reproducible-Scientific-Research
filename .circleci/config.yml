@@ -54,7 +54,7 @@ jobs:
             cd ..
             kaggle competitions download titanic
             jupyter-nbconvert --execute kernel.ipynb
-            kaggle competitions submit titanic -f submission.csv
+            kaggle competitions submit titanic -f submission.csv -m "My submission"
             mkdir reports
             mv kernel.html reports/
 
