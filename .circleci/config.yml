@@ -52,11 +52,12 @@ jobs:
             cd .forkaggle
             echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             cd ..
-            kg download -c titanic
+            kg download -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -f test.csv
+            kg download -u KAGGLE_NAME -p KAGGLE_PASSWORD -c titanic -f train.csv
             jupyter-nbconvert --execute kernel.ipynb
-            kaggle competitions submit titanic -f submission.csv -m "Submission"
+            kg submit submission.csv -m "my submission of Titanic"
             mkdir reports
-            mv my-titanic.html reports/
+            mv kernel.html reports/
 
       - store_artifacts:
           path: reports
