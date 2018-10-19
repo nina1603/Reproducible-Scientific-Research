@@ -48,7 +48,7 @@ jobs:
             . venv/bin/activate
             mkdir .kaggle
             cd .kaggle
-            echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
+            echo "{"username":"${KAGGLE_NAME}","key":"${KAGGLE_KEY}}" > kaggle.json 
             cd ..
             kaggle competitions download titanic
             jupyter-nbconvert --execute kernel.ipynb
