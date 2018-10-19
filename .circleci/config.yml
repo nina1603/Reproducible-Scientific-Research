@@ -48,10 +48,6 @@ jobs:
           name: downloading and commiting kernel
           command: |
             . venv/bin/activate
-            mkdir .kaggle
-            cd .kaggle
-            echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
-            cd ..
             kaggle competitions download titanic
             jupyter-nbconvert --execute kernel.ipynb
             kaggle competitions submit titanic -f submission.csv -m "My submission"
