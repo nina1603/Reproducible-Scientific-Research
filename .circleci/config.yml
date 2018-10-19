@@ -49,10 +49,10 @@ jobs:
             mkdir .kaggle
             cd .kaggle
             echo "{"username":\"${KAGGLE_NAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
-            cd ..
+            cd --
             kaggle competitions download titanic
             jupyter-nbconvert --execute kernel.ipynb
-            kaggle competitions submit titanic -f submission.csv -m "submission"
+            kaggle competitions submit titanic -f submission.csv
             mkdir reports
             mv kernel.html reports/
 
