@@ -44,6 +44,7 @@ jobs:
       #mkdir -p reports
       #jupyter nbconvert --execute task_0.ipynb
       #mv task_0.html reports/task.html
+      
       - run:
           name: downloading and commiting kernel
           command: |
@@ -51,8 +52,11 @@ jobs:
             kaggle competitions download titanic
             jupyter-nbconvert --execute kernel.ipynb
             kaggle competitions submit titanic -f submission.csv -m "My submission"
-            mkdir reports
+            mkdir -p reports
             mv kernel.html reports/
+            mv submission.csv reports/
+            export OSF_PASSWORD
+            osf -p x783r upload reports/submission.csv osfstorage/Aleskerova/submission.csv
 
       - store_artifacts:
           path: reports
