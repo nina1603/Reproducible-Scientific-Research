@@ -1,4 +1,4 @@
-Circle CI
+CircleCI
 
 [![CircleCI](https://circleci.com/gh/nina1603/VNI.svg?style=svg)](https://circleci.com/gh/nina1603/VNI)
 
