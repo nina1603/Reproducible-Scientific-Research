@@ -56,7 +56,7 @@ jobs:
             mv kernel.html reports/
             mv submission.csv reports/
             export OSF_PASSWORD
-            osf -p x783r upload reports/submission.csv osfstorage/Aleskerova/submission.csv
+            # osf -p x783r upload reports/submission.csv osfstorage/Aleskerova/submission.csv
             osf -p x783r upload reports/kernel.html osfstorage/Aleskerova/titanic.html
 
       - store_artifacts:
